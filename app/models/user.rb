@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :city, :contractor, presence: true
   validates :email, presence: true, uniqueness: true
+  # has_one_attached :photo
+
 end
