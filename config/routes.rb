@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users do
-    resources :trip, except: %i[destroy]
+  devise_for :users
+
+  resources :users, only: %i[show] do
+    resources :trips, except: %i[destroy]
   end
 
-  resources :trip, only: %i[destroy]
-  
+  resources :trips, only: %i[destroy]
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
