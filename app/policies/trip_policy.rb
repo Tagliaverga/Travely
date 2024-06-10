@@ -23,8 +23,12 @@ class TripPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.where(user: user)
+    end
+
+    def resolve
+      user.admin? ? scope.all : scope.where(user: user)
+    end
   end
 end

@@ -19,6 +19,7 @@ class TripsController < ApplicationController
 
   def  index
     @trips = Trip.all
+    @restaurants = policy_scope(Restaurant)
   end
 
   def show
