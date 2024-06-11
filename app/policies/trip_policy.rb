@@ -27,8 +27,8 @@ class TripPolicy < ApplicationPolicy
       scope.where(user: user)
     end
 
-    def resolve
-      user.admin? ? scope.all : scope.where(user: user)
-    end
+    # def resolve
+    #   user.admin? ? scope.all : scope.where(user: user)
+    # end
   end
 end
