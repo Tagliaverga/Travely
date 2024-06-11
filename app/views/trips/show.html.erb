@@ -1,4 +1,11 @@
-<h1>Trip </h1>
+<h1>Trip to <strong><%= @trip.destination %></strong> </h1>
 
-
-
+<h2>Add a itinerary</h2>
+<%= link_to "add a itinerary", new_trip_itinerary_path(@trip) %>
+<ul>
+  <% @trip.itineraries.each do |itinerary| %>
+  <li>
+    <%= itinerary.description %> - <%= itinerary.date %>
+  </li>
+  <% end %>
+</ul>
