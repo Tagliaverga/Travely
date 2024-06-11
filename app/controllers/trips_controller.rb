@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
   before_action :set_trip, only:  %i[show edit update destroy]
   before_action :set_itinerary, only:  %i[show edit update destroy]
-  
+
   def new
     @trip = Trip.new
     authorize @trip
@@ -12,7 +12,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
     authorize @trip
     if @trip.save
-      redirect_to user_trips_path, notice: "Trip was succefully created."
+      redirect_to user_trips_path(@trip), notice: "Trip was succefully created."
     else
       render :new, status: :unprocessable_entity
     end
