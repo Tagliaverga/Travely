@@ -3,7 +3,9 @@ class TripsController < ApplicationController
   before_action :set_itinerary, only:  %i[edit update destroy]
 
   def new
+    @user = User.find(params[:user_id])
     @trip = Trip.new
+
     authorize @trip
   end
 
