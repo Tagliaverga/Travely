@@ -6,7 +6,12 @@ Rails.application.routes.draw do
     resources :trips, except: %i[destroy]
   end
 
-  resources :trips, only: %i[destroy]
+  resources :trips, only: %i[destroy] do
+    resources :itineraries, only: %i[ new create update edit]
+  end
+
+  resources :itineraries, only: %i[destroy]
+
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
