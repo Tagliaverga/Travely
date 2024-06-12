@@ -5,7 +5,7 @@
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
   <li>
-    <%= itinerary.description %> - <%= itinerary.date %>
+    <%= itinerary.description %> - <%= itinerary.date.year %> / <%= format('%02d', itinerary.date.month) %> / <%= format('%02d', itinerary.date.day) %> - Hour: <%= format('%02d', itinerary.date.hour) %> : <%= format('%02d', itinerary.date.min) %>
   </li>
   <% end %>
 </ul>
