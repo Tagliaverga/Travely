@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
 
-  resources :users, only: %i[show] do
+  resources :users, only: %i[show edit update] do
     resources :trips, except: %i[destroy]
   end
 
