@@ -15,7 +15,26 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+
+    <%# <%= f.input :country,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "country" } %>
+
+    <%= f.input :city,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "city" }%>
+
+    <%= f.input :contractor, as: :select,
+                collection: [['Yes',true], ['No',false]]
+                # required: true,
+                # autofocus: true,
+                # include_blank: false,
+                # input_html: { autocomplete: "contractor" }
+                %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
