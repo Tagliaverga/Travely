@@ -53,6 +53,8 @@ gem "sassc-rails"
 
 gem "pundit"
 gem 'faker'
+gem 'country_select'
+gem "pg_search"
 
 group :development, :test do
   gem "dotenv-rails"
