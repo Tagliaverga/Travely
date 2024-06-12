@@ -1,0 +1,9 @@
+<h1>Editando seu perfil</h1>
+<%= simple_form_for [@user] do |f| %>
+  <%= f.input :email %>
+  <%= f.input :country %>
+  <%= f.input :city %>
+  <%= f.input :contractor, as: :boolean, checked_value: 'true', unchecked_value: 'false' %>
+  <%# <%= f.select :contractor, as: :boolean, contractor: 'postive', traveler: 'negative' %>
+  <%= f.button :submit %>
+<% end %>
