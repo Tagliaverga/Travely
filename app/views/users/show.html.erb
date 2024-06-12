@@ -1,13 +1,32 @@
-<h1>Name: <%= @user.first_name %> <%= @user.last_name %></h1>
+ <h1 class="d-flex justify-content-center m-4 bebas-neue-regular">PROFILE</h1>
+<div class="container">
 
-<h3>Address: <%= @user.city  %> - <%= @user.country %></h3><br>
+  <div class="row g-0 d-flex justify-content-between m-4 align-items-center">
 
-<h4>Email: <%= @user.email %></h4><br>
+    <div class="col-md-4 d-flex justify-content-start">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "perfil "%>
+    </div>
 
-<h4>Occupation: <%= @user.contractor == true ? "Contractor" : "Traveler" %></h4><br>
+    <div class="col-md-6 roboto-regular">
+      <p><strong> Name: </strong> <%= @user.first_name %> <%= @user.last_name %>
 
-<%= link_to 'Edit', edit_user_path(@user)%>
+      <p><strong> Address: </strong> <%= @user.city  %> - <%= @user.country %></p>
 
-<%= link_to "Your trips", user_trips_path(current_user.id) %>
+      <p><strong> Email: </strong> <%= @user.email %></p>
 
-<%= link_to "New Trip", new_user_trip_path(current_user.id), class: "btn btn-primary" %>
+      <p><strong> Occupation: </strong> <%= @user.contractor == true ? "Contractor" : "Traveler" %></p>
+
+    </div>
+
+    <div class="col-md-2 d-flex align-items-top roboto-bold">
+      <%= link_to 'Edit profile', edit_user_path(@user), class: "btn btn-ghost mb-2"%>
+    </div>
+
+  </div>
+
+  <div class="d-grid gap-2 m-4 roboto-bold">
+      <%= link_to "Your trips", user_trips_path(current_user.id), class: "btn btn-ghost mb-2" %>
+
+      <%= link_to "New Trip", new_user_trip_path(current_user.id), class: "btn btn-ghost mb-2" %>
+  </div>
+</div>
