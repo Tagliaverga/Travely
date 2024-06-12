@@ -1,7 +1,7 @@
 <h1>Trips</h1>
 <ul>
 <% @trips.each do |trip| %>
-<li><%= link_to trip.destination, user_trip_path(current_user, trip) %> - <%= trip.star_date %> - <%= trip.end_date %></li>
+<li><%= link_to trip.destination, user_trip_path(current_user, trip) %> Start: <%= trip.star_date.year %>/<%= format('%02d', trip.star_date.month) %>/<%= format('%02d', trip.star_date.day) %> - End: <%= trip.end_date.year %>/<%= format('%02d', trip.end_date.month) %>/<%= format('%02d', trip.end_date.day) %></li>
 <% end %>
 </ul>
 <%= link_to "New trip", new_user_trip_path if policy(Trip).new? %>
