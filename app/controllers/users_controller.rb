@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update]
-
-
+  before_action :set_user, only: %i[show edit update]
 
   def show
     authorize @user
@@ -18,10 +16,7 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-
-
   private
-
 
   def user_params
     params.require(:user).permit( :first_name, :last_name, :email, :password, :country, :contractor, :city)
