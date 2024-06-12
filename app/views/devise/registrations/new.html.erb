@@ -1,6 +1,7 @@
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%# , html: {class: "mb-4", data: { search_movies_target: 'form' }}) do |f| %> 
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -28,6 +29,7 @@
 
     <%= f.input :contractor, as: :select,
                 collection: [['Yes',true], ['No',false]]
+                # data: { search_movies_target: 'input', action: 'keyup->search-movies#update' }
                 # required: true,
                 # autofocus: true,
                 # include_blank: false,
