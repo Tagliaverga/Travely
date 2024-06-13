@@ -1,5 +1,5 @@
 class ItinerariesController < ApplicationController
-  before_action :set_trip, only: %i[new create destroy]
+  before_action :set_trip, only: %i[new create]
   def new
     @trip = Trip.find(params[:trip_id])
     @itinerary = Itinerary.new
@@ -17,6 +17,14 @@ class ItinerariesController < ApplicationController
     end
       authorize @itinerary
   end
+
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to trip_path(params[:trip]), notice: "itinerary deleted"
+    authorize @itinerary
+  end
+
 
   private
 
