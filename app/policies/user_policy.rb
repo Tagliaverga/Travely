@@ -9,13 +9,15 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
-  def edit?
-    true
-  end
-
   def update?
     true
   end
+
+  def create?
+    true
+  end
+
+
 
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
