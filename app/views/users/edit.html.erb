@@ -1,10 +1,11 @@
 <h1>Editando seu perfil</h1>
+
 <%= simple_form_for [@user] do |f| %>
   <%= f.input :first_name, label: "Name" %>
   <%= f.input :last_name, label: "Last name" %>
   <%= f.input :email %>
   <%= f.input :country %>
   <%= f.input :city %>
-  <%= f.input :contractor, as: :boolean, checked_value: 'true', unchecked_value: 'false' %>
+  <%= f.input :contractor, as: :select, collection: [['Yes', true], ['No', false]] %>
   <%= f.button :submit %>
 <% end %>
