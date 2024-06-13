@@ -25,6 +25,16 @@ background-color: #ffff;
   opacity: 1;
 }
 
+.btn-destroy {
+  color: #1ABC9C;
+  border: 1px solid #1ABC9C;
+  padding: 4px 8px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
