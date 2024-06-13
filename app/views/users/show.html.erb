@@ -38,7 +38,7 @@
       <ul>
         <% @user.services.each do |service| %>
         <li class="roboto-regular d-flex align-items-baseline">
-          <strong>Task:</strong> <%=  service.description %>, <%= service.price %> at <%= service.local %>
+          <strong>Service: </strong> <%=service.description %>, <%= service.price %> at <%= service.local %>
           <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </li>
         <% end %>
