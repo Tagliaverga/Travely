@@ -14,8 +14,8 @@ class ItinerariesController < ApplicationController
       redirect_to user_trip_path(current_user, @trip), notice: "itinerario salvo"
       else
         render :new, status: :unprocessable_entity
-        end
-        authorize @itinerary
+    end
+      authorize @itinerary
   end
 
   private
