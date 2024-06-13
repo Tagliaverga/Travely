@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :first_name, :last_name, :city, :country, presence: true, on: :update
-  validates :contractor, presence: true
+  # validates :contractor, presence: true
+
   # has_one_attached :photo
 
 end
