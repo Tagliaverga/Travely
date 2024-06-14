@@ -1,8 +1,30 @@
-<h1>Trips</h1>
-<ul>
-<% @trips.each do |trip| %>
-<li><%= link_to trip.destination, user_trip_path(current_user, trip) %> Start: <%= trip.star_date.year %>/<%= format('%02d', trip.star_date.month) %>/<%= format('%02d', trip.star_date.day) %> - End: <%= trip.end_date.year %>/<%= format('%02d', trip.end_date.month) %>/<%= format('%02d', trip.end_date.day) %></li>
-<% end %>
-</ul>
+<h1  class="d-flex justify-content-center m-4 bebas-neue-regular">Trips</h1>
+
+<div class="container d-flex align-items-center justify-content-between m-4">
+  <div class="cards-grid">
+    <% @trips.each do |trip| %>
+      <div class="cardb p-4">
+        <div class=" mb-4">
+          <p><strong>Destination:</strong> <%= trip.destination %></p>
+
+          <p><strong>Start: </strong> <%= trip.star_date.year %>/<%= format('%02d', trip.star_date.month) %>/<%= format('%02d', trip.star_date.day) %></p>
+
+          <p><strong>End: </strong><%= trip.end_date.year %>/<%= format('%02d', trip.end_date.month) %>/<%= format('%02d', trip.end_date.day)%></p>
+        </div>
+
+        <div class="mb-2">
+          <% if trip.photo.key.present? %>
+          <%= cl_image_tag trip.photo.key, height: 360, class: "img-card-index", crop: :fill%>
+          <% else %>
+          <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", height: 360, class: "img-card-index", crop: :fill%>
+          <% end %>
+        </div>
+        <%= link_to "View", user_trip_path(current_user, trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
 <%= link_to "New trip", new_user_trip_path, class: "btn btn-destroy ms-2 mb-2 roboto-regular" if policy(Trip).new? %>
 <%= link_to "Back", user_path(current_user), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
