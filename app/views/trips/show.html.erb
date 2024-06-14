@@ -1,13 +1,5 @@
 <h1>Trip to <strong><%= @trip.destination %></strong> </h1>
 
-
-
-
-<%# <%= date.day %>
-
-
-
-
 <%= month_calendar(attribute: :star_date, end_attribute: :end_date) do |date| %>
   <%= date %>
 <% end %>
@@ -23,5 +15,6 @@
   </li>
   <% end %>
 </ul>
+
 
 <%= link_to "Back", user_trips_path(current_user, @trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
