@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :itineraries, only: %i[new create update edit]
   end
 
-  resources :itineraries, only: %i[destroy] do
+  resources :itineraries, only: %i[show destroy] do
     resources :experiences, except: %i[index]
   end
 
