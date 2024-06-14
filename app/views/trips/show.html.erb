@@ -1,5 +1,17 @@
 <h1>Trip to <strong><%= @trip.destination %></strong> </h1>
 
+
+
+
+<%# <%= date.day %>
+
+
+
+
+<%= month_calendar(attribute: :star_date, end_attribute: :end_date) do |date| %>
+  <%= date %>
+<% end %>
+
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
 <ul>
