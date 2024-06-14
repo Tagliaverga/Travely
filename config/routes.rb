@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-
+  get 'experiences/new'
+  get 'experiences/create'
+  get 'experiences/show'
+  get 'experiences/edit'
+  get 'experiences/update'
+  get 'experiences/destroy'
   devise_for :users
+
   resources :profiles, only: %i[new create]
 
+
+  resources :users, only: %i[destroy] do
+    resources :services
+  end
 
   resources :users, only: %i[show edit update] do
     resources :trips, except: %i[destroy]
@@ -12,9 +22,9 @@ Rails.application.routes.draw do
     resources :itineraries, only: %i[ new create update edit]
   end
 
-  resources :itineraries, only: %i[destroy]
-
-
+  resources :itineraries, only: %i[destroy] do
+    resources :experiences, except: %i[index]
+  end
 
   root to: "pages#home"
 

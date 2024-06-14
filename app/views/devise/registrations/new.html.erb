@@ -17,11 +17,10 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
 
-          <%# <%= f.input :contractor, as: :select,
-                      collection: [['Yes',true], ['No',false]],
-                      Date:  %>
-          <%# <%= f.select :contractor, as: :boolean, contractor: 'postive', traveler: 'negative' %> %>
-          <%= f.input :contractor, as: :boolean, checked_value: 'true', unchecked_value: 'false' %>
+          <%= f.input :contractor, as: :select,
+                      collection: [['Yes', true], ['No', false]] %>
+          <%# <%= f.select :contractor, as: :boolean, contractor: 'postive', traveler: 'negative' %>
+          <%# <%= f.input :contractor, as: :boolean, checked_value: 'true', unchecked_value: 'false' %>
 
 
           <div class="form-actions" >

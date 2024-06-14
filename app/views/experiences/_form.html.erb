@@ -1,0 +1,8 @@
+<%= simple_form_for [@itinerary, @experience] do |f| %>
+  <%# <%= f.input :name %>
+  <%= f.input :service_id, as: :select,
+              collection: [@user] %>
+  <%# <%= f.input :star_date %>
+  <%# <%= f.input :end_date %>
+  <%= f.button :submit %>
+<% end %>
