@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
   def new
     @experience = Experience.new
     @itinerary = Itinerary.find(params[:itinerary_id])
-    @service = Service.all
+    @service = Service.find(params[:service_id])
     @user = User.all
     authorize @experience
   end
@@ -61,10 +61,10 @@ class ExperiencesController < ApplicationController
   end
 
   def set_itinerary
-    @itinerary = Itinerary.find(params[:id])
+    @itinerary = Itinerary.find(params[:itinerary_id])
   end
 
-  def set_itinerary
+  def set_service
     @service = Service.find(params[:service_id])
   end
 end
