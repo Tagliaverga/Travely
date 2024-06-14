@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'experiences/new'
-  get 'experiences/create'
-  get 'experiences/show'
-  get 'experiences/edit'
-  get 'experiences/update'
-  get 'experiences/destroy'
+
   devise_for :users
 
   resources :profiles, only: %i[new create]
@@ -19,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :trips, only: %i[destroy] do
-    resources :itineraries, only: %i[ new create update edit]
+    resources :itineraries, only: %i[new create update edit]
   end
 
   resources :itineraries, only: %i[destroy] do
