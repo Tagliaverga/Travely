@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
-  before_action :set_trip, only: %i[new create]
+  before_action :set_trip, only: %i[show new create]
+
   def new
-    @trip = Trip.find(params[:trip_id])
     @itinerary = Itinerary.new
     authorize @itinerary
     authorize @trip
