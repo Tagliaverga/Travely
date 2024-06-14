@@ -2,7 +2,7 @@
 <% if @trip.photo.key.present? %>
   <%= cl_image_tag @trip.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>
-   <%= image_tag("default.png", alt: "A stern frog!", height: 300, width: 400, crop: :fill ) %>
+   <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", width: 400, height: 300, crop: :fill %>
 <% end %>
 
 
