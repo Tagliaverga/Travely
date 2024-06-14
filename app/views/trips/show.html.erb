@@ -1,4 +1,15 @@
 <h1>Trip to <strong><%= @trip.destination %></strong> </h1>
+<% if @trip.photo.key.present? %>
+  <%= cl_image_tag @trip.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+   <%= image_tag("default.png", alt: "A stern frog", height: 300, width: 400, crop: :fill ) %>
+<% end %>
+
+
+<%# <%= date.day %>
+
+
+
 
 <%= month_calendar(attribute: :star_date, end_attribute: :end_date) do |date| %>
   <%= date %>
@@ -6,11 +17,11 @@
 
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
+
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
   <li>
     <%= itinerary.description %> - <%= itinerary.date.year %> / <%= format('%02d', itinerary.date.month) %> / <%= format('%02d', itinerary.date.day) %> - Hour: <%= format('%02d', itinerary.date.hour) %> : <%= format('%02d', itinerary.date.min) %>
-
     <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </li>
   <% end %>
