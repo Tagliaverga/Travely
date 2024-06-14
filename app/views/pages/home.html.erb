@@ -1,18 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container d-flex justify-content-center w-100">
+ <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <%= image_tag "Home.png", alt: "Travely", class: "banner-img", width:1300 %>
+        <div class="carousel-caption d-none d-md-block">
 
-<%# <%= link_to "Create  a new experience", new_itinerary_experience_path(@itinerary) %> %>
+        </div>
 
 
-<%# <div class="container"> %>
-  <%# <div class="search-form-control form-group m-3"> %>
-    <%# <%= form_with url: user_trips_path(current_user.id), method: :get, class: "d-flex" do %>
-      <%# <%= text_field_tag :query, %>
-            <%# params[:query], %>
-            <%# class: "form-control", %>
-            <%# placeholder: "Encontre sua trip" %>
-        <%# %>
-      <%# <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
-    <%# <% end %>
-  <%# </div> %>
-<%# </div> %>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+<div class="container w-100">
+  <div class="search-form-control form-group m-3">
+    <%= form_with url: '#' , method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Encontre seu produto"
+        %>
+      <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
