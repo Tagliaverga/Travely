@@ -1,8 +1,8 @@
 <%= simple_form_for [@user, @service] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :local %>
   <%= f.input :profession, as: :select,
             collection: [ 'Fotographer', 'Tourist Gruide', 'Translator', 'Driver', 'Dog Walker', 'Dog Siter'] %>
-  <%= f.button :submit %>
+  <%= f.input :local %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.button :submit, class:"btn-login btn btn-ghost mt-2" %>
 <% end %>
