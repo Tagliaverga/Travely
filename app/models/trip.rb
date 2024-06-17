@@ -11,4 +11,8 @@ class Trip < ApplicationRecord
   has_many :experiences, through: :itinerary
   validates :destination, :star_date, :end_date, presence: true
   has_one_attached :photo
+
+  def start_time
+    self.my_related_model.start 
+end
 end

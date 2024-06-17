@@ -28,16 +28,6 @@
       <%= link_to "Your trips", trips_path, class: "btn btn-ghost mb-2" %>
       <%= link_to "New Trip", new_trip_path, class: "btn btn-ghost mb-2" %>
       <%= link_to "Your documents", documents_path, class: "btn btn-ghost mb-2" %>
-
-
-      <ul>
-        <% @itineraries.each do |itinerary| %>
-          <li>
-            <%=itinerary.description %></p>
-            <%= link_to "Add a documents", new_itinerary_document_path(itinerary,@document), class: "btn btn-ghost mb-2" %>
-          </li>
-        <% end %>
-      </ul>
   </div>
 
   <% if @user.contractor?  %>
@@ -87,3 +77,19 @@
   <%= link_to "New service", new_user_service_path(current_user.id), class: "btn btn-ghost mb-2 d-flex justify-content-center" %>
   <% end %>
 </div>
+
+
+<ul>
+        <% @itineraries.each do |itinerary| %>
+          <li>
+          <div class="d-flex justify-content-between">
+            <div>
+              <%=itinerary.description %></p>
+            </div>
+            <div>
+              <%= link_to "Add a documents", new_itinerary_document_path(itinerary,@document), class: "btn btn-ghost mb-2" %>
+            </div>
+          </div>
+          </li>
+        <% end %>
+      </ul>

@@ -6,13 +6,18 @@
 <% end %>
 
 
-<%# <%= date.day %>
-
-
-
-
 <%= month_calendar(attribute: :star_date, end_attribute: :end_date) do |date| %>
   <%= date %>
+<% end %>
+
+<%= month_calendar(events: @meetings) do |date, meetings| %>
+  <%= date %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.name %>
+    </div>
+  <% end %>
 <% end %>
 
 <h2>Add a itinerary</h2>
@@ -25,7 +30,7 @@
     <%= itinerary.description %> - <%= itinerary.date.year %> / <%= format('%02d', itinerary.date.month) %> / <%= format('%02d', itinerary.date.day) %> - Hour: <%= format('%02d', itinerary.date.hour) %> : <%= format('%02d', itinerary.date.min) %>
   </div>
   <div>
-    <%= link_to "Create  a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 btn-singup btn btn-ghost" %>
+    <%= link_to "Create  a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn-singup btn btn-ghost" %>
     <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </div>
   </li>

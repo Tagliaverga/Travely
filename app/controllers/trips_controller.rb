@@ -21,6 +21,8 @@ class TripsController < ApplicationController
 
   def  index
     @trips = policy_scope(Trip)
+    start_date = params.fetch(:star_date, Date.today).to_date
+    @meetings = Meeting.where(starts_at: star_date.beginning_of_month.beginning_of_week..star_date.end_of_month.end_of_week)
   end
 
   def show
@@ -41,9 +43,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    authorize @trip
     @trip.destroy
     redirect_to trips_path, notice: "Trip was succefully destroyed.", status: :see_other
+    authorize @trip
   end
 
   private
