@@ -1,4 +1,5 @@
-<%= simple_form_for [@user, @service] do |f| %>
+<div class="container form ">
+  <%= simple_form_for [@user, @service] do |f| %>
   <%= f.input :profession, as: :select,
             collection: [ 'Fotographer', 'Tourist Gruide', 'Translator', 'Driver', 'Dog Walker', 'Dog Siter'] %>
   <%= f.input :local %>
@@ -6,3 +7,4 @@
   <%= f.input :description %>
   <%= f.button :submit, class:"btn-login btn btn-ghost mt-2" %>
 <% end %>
+</div>
