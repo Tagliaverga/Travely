@@ -34,44 +34,45 @@
   <% if @user.contractor?  %>
     <div>
       <h3 class="d-flex justify-content-center m-2 bebas-neue-regular">Your services</h3>
-
-      <div class="mt-2 d-flex justify-content-center">
+      <div class="">
+        <div class="mt-2 d-flex justify-content-center">
+          <div>
+            <ul>
+            <li class="mt-1 roboto-regular d-flex align-items-baseline">
+              <strong class="mx-1"> City: </strong>  Paris
+            </li>
+            </ul>
+          </div>
         <div>
           <ul>
-          <li class="mt-1 roboto-regular d-flex align-items-baseline">
-            <strong class="mx-1"> Country: </strong>  Paris
-          </li>
+            <% @user.services.each do |service| %>
+            <li class="my-1 roboto-regular d-flex align-items-baseline">
+              <strong class="mx-1">Service:</strong> <%=service.profession %>
+              <%# <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+            </li>
+            <% end %>
           </ul>
         </div>
-      <div>
-        <ul>
-          <% @user.services.each do |service| %>
-          <li class="mt-1 roboto-regular d-flex align-items-baseline">
-            <strong class="mx-1">Service:</strong> <%=service.profession %>
-            <%# <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <% @user.services.each do |service| %>
-          <li class="mt-1 roboto-regular d-flex align-items-baseline">
-            <strong class="mx-1">Description:</strong>  <%=service.description %>
-            <%# <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <% @user.services.each do |service| %>
-            <li class="roboto-regular d-flex align-items-baseline">
-              <strong class="mx-1"> Price: </strong> $ <%= service.price %> at <%= service.local %>
-              <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular ", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <div>
+          <ul>
+            <% @user.services.each do |service| %>
+            <li class="mt-1 roboto-regular d-flex align-items-baseline">
+              <strong class="mx-1">Description:</strong>  <%=service.description %>
+              <%# <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
             </li>
-          <% end %>
-        </ul>
+            <% end %>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <% @user.services.each do |service| %>
+              <li class="roboto-regular d-flex align-items-baseline">
+                <strong class="mx-1"> Price: </strong> $ <%= service.price %> at <%= service.local %>
+                <%= link_to 'Delete', user_service_path(@user, service), class: "btn btn-destroy ms-2 mb-2 roboto-regular ", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   <%= link_to "New service", new_user_service_path(current_user.id), class: "btn btn-ghost mb-2 d-flex justify-content-center" %>
