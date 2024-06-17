@@ -44,74 +44,130 @@
   </div>
 </div>
 
-<div class="container w-100">
+<%# <div class="container w-100">
   <div class="search-form-control form-group m-3">
     <%= form_with url: '#' , method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
+      <%# <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Encontre seu produto"
         %>
-      <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
-    <% end %>
-  </div>
-</div>
+      <%# <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
+    <%# <% end %>
+  <%# </div>
+</div> %>
 
-<div class="home container d-flex align-items-center justify-content-between m-4"  id="homepage">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travely</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <div class="section">
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <a href="#" class="btn">
+                            <%= image_tag "mundo.jpeg", height: 360, class: "img-card-index", crop: :fill, alt: "mundo" %>
+                            <span>NEW TRIP</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2>Discover Your Next Adventure with Travely</h2>
+                    <p>Are you ready to embark on the journey of a lifetime? Look no further than Travely, your ultimate guide to organizing unforgettable trips. Whether you’re dreaming of exploring exotic destinations, immersing yourself in local cultures, or simply relaxing in the most serene landscapes, Travely is here to make your travel dreams come true.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>What is the most visited destination in the world?</h2>
+            <div class="row">
+                <div class="column">
+                    <%= image_tag "phiphi.jpg", height: 360, class: "img-card-index", crop: :fill, alt: "phiphi" %>
+                </div>
+                <div class="column">
+                    <h3>Thailand</h3>
+                    <p>Thailand is a country located in Southeast Asia, known for its rich history, vibrant culture, majestic temples, and stunning landscapes. With a unique blend of tradition and modernity, Thailand offers an unforgettable travel experience for visitors from around the world.</p>
+                    <h4>History and Culture</h4>
+                    <p>The history of Thailand is marked by ancient dynasties, powerful kingdoms, and diverse cultural influences, including Buddhism, which plays a central role in daily life and Thai traditions.</p>
+                </div>
+            </div>
+            <a href="#" class="btn">CLICK TO CREATE YOUR NEW TRIP</a>
+        </div>
+        <div class="section">
+            <h2>The Passion for Harry Potter and the Castles of Scotland</h2>
+            <div class="row">
+                <div class="column">
+                    <p>For fans of the Harry Potter series, the world created by J.K. Rowling is a magical escape filled with wonder, adventure, and a deep sense of history. One of the most enchanting aspects of this world is its setting, with many scenes taking place in ancient castles and historic landscapes. This connection has fostered a unique relationship between Harry Potter enthusiasts and the castles of Scotland, where much of the inspiration and filming for the series took place.</p>
+                </div>
+                <div class="column">
+                    <%= image_tag "Scotland.webp", height: 360, class: "img-card-index", crop: :fill, alt: "scotland" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<%# <div class="home container d-flex align-items-center justify-content-between m-4"  id="homepage">
   <div class="cards-grid">
 
     <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "Italy.png", height: 360, class: "img-card-index", crop: :fill, alt: "italia " %>
-      </div><br>
+      <%# </div><br>
       <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
-        <h4><strong>Roma</strong></h4>
+        <h4><strong>New Trip</strong></h4>
       </div>
-    </div>
+    </div> %>
 
-    <div class="cardb p-4">
+    <%# <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "France.png", height: 360, class: "img-card-index", crop: :fill, alt: "frança " %>
-      </div>
+      <%# </div>
       <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
         <h4><strong>Paris</strong></h4>
       </div>
-    </div>
+    </div> %>
 
-    <div class="cardb p-4">
+    <%# <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "Brazil.png", height: 360, class: "img-card-index", crop: :fill, alt: "Brasil " %>
-      </div><br>
+      <%# </div><br>
       <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
         <h4><strong>Brasil</strong></h4>
       </div>
-    </div>
+    </div> %>
 
-    <div class="cardb p-4">
+    <%# <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "England.png", height: 360, class: "img-card-index", crop: :fill, alt: "Inglaterra " %>
-      </div>
+      <%# </div>
       <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
         <h4><strong>Inglaterra</strong></h4>
       </div>
-    </div>
+    </div> %>
 
-    <div class="cardb p-4">
+    <%# <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "Germany.png", height: 360, class: "img-card-index", crop: :fill, alt: "Alemanha " %>
-      </div><br>
+      <%# </div><br>
       <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
         <h4><strong>Alemanha</strong></h4>
       </div>
-    </div>
+    </div> %>
 
-    <div class="cardb p-4">
+    <%# <div class="cardb p-4">
       <div class="mb-2">
         <%= image_tag "Spain.png", height: 360, class: "img-card-index", crop: :fill, alt: "Espanha " %>
-      </div>
+      <%# </div>
       <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
         <h4><strong>Espanha</strong></h4>
       </div>
-    </div>
+    </div> %>
   </div>
 </div>
