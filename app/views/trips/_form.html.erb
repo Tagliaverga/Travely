@@ -1,8 +1,10 @@
 <div class="container form">
   <%= simple_form_for [@user, @trip] do |f| %>
   <%= f.input :destination, class:"input" %>
-  <%= f.input :star_date %>
-  <%= f.input :end_date %>
+  <%= f.input :star_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+
+  <%# <%= f.input :end_date %>
   <%= f.input :photo, as: :file %>
   <%= f.button :submit, class:"btn-login btn btn-ghost mt-2" %>
 <% end %>

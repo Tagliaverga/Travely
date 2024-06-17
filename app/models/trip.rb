@@ -8,6 +8,7 @@ class Trip < ApplicationRecord
 
   belongs_to :user
   has_many :itineraries
+  has_many :experiences, through: :itinerary
   validates :destination, :star_date, :end_date, presence: true
   has_one_attached :photo
 end

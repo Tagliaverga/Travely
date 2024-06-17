@@ -15,14 +15,13 @@ class TripsController < ApplicationController
     @trip.user = current_user
     authorize @trip
     if @trip.save
-      redirect_to user_trips_path(@trip), notice: "Trip was succefully created."
+      redirect_to trip_path(@trip), notice: "Trip was succefully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def  index
-    @trips = Trip.all
     @trips = policy_scope(Trip)
   end
 
@@ -37,7 +36,7 @@ class TripsController < ApplicationController
   def update
     authorize @trip
     if @trip.update(trip_params)
-      redirect_to user_trips_path, notice: "Trip was succefully updated."
+      redirect_to trips_path, notice: "Trip was succefully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +45,7 @@ class TripsController < ApplicationController
   def destroy
     authorize @trip
     @trip.destroy
-    redirect_to user_trips_path, notice: "Trip was succefully destroyed.", status: :see_other
+    redirect_to trips_path, notice: "Trip was succefully destroyed.", status: :see_other
   end
 
   private

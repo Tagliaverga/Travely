@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   resources :profiles, only: %i[new create]
 
-
   resources :users, only: %i[destroy] do
     resources :services
   end
 
-  resources :users, only: %i[show edit update] do
-    resources :trips, except: %i[destroy]
-  end
+  resources :users, only: %i[show edit update]
+  
+  resources :trips, except: %i[destroy]
 
   resources :trips, only: %i[destroy] do
     resources :itineraries, only: %i[new create update edit]
