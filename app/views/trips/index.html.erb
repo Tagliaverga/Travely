@@ -26,5 +26,5 @@
   </div>
 </div>
 
-<%= link_to "New trip", new_user_trip_path, class: "btn btn-destroy ms-2 mb-2 roboto-regular" if policy(Trip).new? %>
+<%= link_to "New trip", new_user_trip_path, class: "btn btn-destroy ms-2 mb-2 roboto-regular" if policy(Trip).new? %> #isso
 <%= link_to "Back", user_path(current_user), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
