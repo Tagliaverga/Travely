@@ -1,8 +1,82 @@
-// Specific CSS for your home-page
-// .home {
-//   background-image: asset-url("saguão-backgroundphoto.png");
-//   background-size: cover;
-//   height: 62px;
-//   width: 200px;
-// }
+body {
+  font-family: roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  background-color: #ffff;
+  padding: 20px;
+  text-align: center;
+}
+
+header img {
+  width: 100%;
+  height: fluid;
+}
+
+.content {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+}
+
+.section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  margin: auto 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
+.new-trip {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.new-trip img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .column {
+      flex: 100%;
+  }
+}
