@@ -5,8 +5,6 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    @user = User.find(params[:user_id])
-
     authorize @trip
   end
 
