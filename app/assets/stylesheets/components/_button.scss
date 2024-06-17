@@ -1,0 +1,33 @@
+.btn-login {
+  color: #1abc9c;
+}
+
+.btn-login:hover {
+  box-shadow: 5px 5px 10px;
+  background-color: #1abc9c;
+}
+
+.btn-singup {
+  color: #1abc9c;
+}
+
+.btn-singup:hover {
+  box-shadow: 5px 5px 10px;
+  background-color: #205aa5;
+}
+
+.forgot-password {
+  text-decoration: none;
+}
+.forgot-password:hover {
+  transition: 50ms;
+  color: red;
+  text-decoration: underline;
+  // box-shadow: 5px 5px 10px;
+  text-shadow: 2px 2px 5px;
+}
+
+.btn-resend:hover {
+    box-shadow: 5px 5px 10px;
+    background-color: #1abc9c;
+}

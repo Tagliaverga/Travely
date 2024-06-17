@@ -15,4 +15,14 @@
   background-color: #fff;
   border: solid;
   border-color: #1ABC9C;
+  box-shadow: 5px 5px 10px;
+  border-radius: 20px;
 }
+.cardb:hover {
+    transform: scale(1.05); /* Zoom */
+    box-shadow: 10PX 10px 5px rgba(0, 0, 0, 0.6); /* Aumento do brilho */
+    filter: brightness(110%);
+  }
+  .card-hover-effect {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }

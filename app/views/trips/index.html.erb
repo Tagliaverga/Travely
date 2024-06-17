@@ -16,7 +16,7 @@
           <% if trip.photo.key.present? %>
           <%= cl_image_tag trip.photo.key, height: 360, class: "img-card-index", crop: :fill%>
           <% else %>
-          <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", height: 360, class: "img-card-index", crop: :fill%>
+          <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill%>
           <% end %>
         </div>
         <%= link_to "View", user_trip_path(current_user, trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
@@ -25,6 +25,7 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to "New trip", new_user_trip_path, class: "btn btn-destroy ms-2 mb-2 roboto-regular" if policy(Trip).new? %> #isso
-<%= link_to "Back", user_path(current_user), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
+<div class="d-flex justify-content-center">
+  <%= link_to "New trip", new_user_trip_path, class: "btn-singup btn btn-ghost roboto-regular mx-2" if policy(Trip).new? %>
+  <%= link_to "Back", user_path(current_user), class: "btn-login btn btn-ghost roboto-regular mx-2" %>
+</div>

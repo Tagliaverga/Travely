@@ -5,13 +5,29 @@
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel">
+    <div class="carousel-inner w-100">
       <div class="carousel-item active" data-bs-interval="10000">
         <%= image_tag "Home.png", alt: "Travely", class: "banner-img", width:1300 %>
         <div class="carousel-caption d-none d-md-block">
 
         </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <%= image_tag "Home2.png", alt: "Travely2", class: "banner-img", width:1300 %>
+        <div class="carousel-caption d-none d-md-block">
 
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "Home3.png", alt: "Travely3", class: "banner-img", width:1300 %>
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <%= image_tag "Home4.png", alt: "Travely4", class: "banner-img", width:1300 %>
+        <div class="carousel-caption d-none d-md-block">
 
         </div>
       </div>
@@ -28,7 +44,6 @@
   </div>
 </div>
 
-
 <div class="container w-100">
   <div class="search-form-control form-group m-3">
     <%= form_with url: '#' , method: :get, class: "d-flex" do %>
@@ -39,5 +54,64 @@
         %>
       <%= submit_tag "Buscar", name: "", class: "btn btn-flat" %>
     <% end %>
+  </div>
+</div>
+
+<div class="home container d-flex align-items-center justify-content-between m-4"  id="homepage">
+  <div class="cards-grid">
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "Italy.png", height: 360, class: "img-card-index", crop: :fill, alt: "italia " %>
+      </div><br>
+      <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
+        <h4><strong>Roma</strong></h4>
+      </div>
+    </div>
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "France.png", height: 360, class: "img-card-index", crop: :fill, alt: "frança " %>
+      </div>
+      <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
+        <h4><strong>Paris</strong></h4>
+      </div>
+    </div>
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "Brazil.png", height: 360, class: "img-card-index", crop: :fill, alt: "Brasil " %>
+      </div><br>
+      <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
+        <h4><strong>Brasil</strong></h4>
+      </div>
+    </div>
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "England.png", height: 360, class: "img-card-index", crop: :fill, alt: "Inglaterra " %>
+      </div>
+      <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
+        <h4><strong>Inglaterra</strong></h4>
+      </div>
+    </div>
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "Germany.png", height: 360, class: "img-card-index", crop: :fill, alt: "Alemanha " %>
+      </div><br>
+      <div class="  d-flex justify-content-center mt-4 mb-0  card-home mb-4">
+        <h4><strong>Alemanha</strong></h4>
+      </div>
+    </div>
+
+    <div class="cardb p-4">
+      <div class="mb-2">
+        <%= image_tag "Spain.png", height: 360, class: "img-card-index", crop: :fill, alt: "Espanha " %>
+      </div>
+      <div class=" d-flex justify-content-center mt-4 mb-0 card-home mb-4">
+        <h4><strong>Espanha</strong></h4>
+      </div>
+    </div>
   </div>
 </div>
