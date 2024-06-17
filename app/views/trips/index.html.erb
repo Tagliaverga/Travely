@@ -19,7 +19,11 @@
           <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill%>
           <% end %>
         </div>
+
         <%= link_to "View", trip_path(trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
+        <%# <%= link_to "Delete", trip_destroy_path(trip) , class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2"%>
+        <%= link_to 'Delete', trip_destroy_path(trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
       </div>
 
     <% end %>

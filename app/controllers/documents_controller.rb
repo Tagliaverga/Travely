@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_itinerary, only: %i[show new create]
   def index
     @documents = policy_scope(Document)
+    @document  = Document.where(params[:id])
   end
 
   def new
