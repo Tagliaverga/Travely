@@ -26,7 +26,7 @@ class ItinerariesController < ApplicationController
   def destroy
     @itinerary = Itinerary.find(params[:id])
     @itinerary.destroy
-    redirect_to trip_path(params[:trip]), notice: "itinerary deleted"
+    redirect_to trip_path, notice: "itinerary deleted"
     authorize @itinerary
   end
 
