@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :itineraries, only: %i[destroy] do
-    resources :documents
+    resources :documents, except: %i[destroy]
   end
 
 
