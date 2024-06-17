@@ -19,13 +19,13 @@
           <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill%>
           <% end %>
         </div>
-        <%= link_to "View", user_trip_path(current_user, trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
+        <%= link_to "View", trip_path(trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
       </div>
 
     <% end %>
   </div>
 </div>
 <div class="d-flex justify-content-center">
-  <%= link_to "New trip", new_user_trip_path, class: "btn-singup btn btn-ghost roboto-regular mx-2" if policy(Trip).new? %>
+  <%= link_to "New trip", new_trip_path, class: "btn-singup btn btn-ghost roboto-regular mx-2" if policy(Trip).new? %>
   <%= link_to "Back", user_path(current_user), class: "btn-login btn btn-ghost roboto-regular mx-2" %>
 </div>
