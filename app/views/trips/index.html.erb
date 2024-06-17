@@ -25,6 +25,7 @@
     <% end %>
   </div>
 </div>
-
-<%= link_to "New trip", new_user_trip_path, class: "btn btn-destroy ms-2 mb-2 roboto-regular" if policy(Trip).new? %>
-<%= link_to "Back", user_path(current_user), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
+<div class="d-flex justify-content-center">
+  <%= link_to "New trip", new_user_trip_path, class: "btn-singup btn btn-ghost roboto-regular mx-2" if policy(Trip).new? %>
+  <%= link_to "Back", user_path(current_user), class: "btn-login btn btn-ghost roboto-regular mx-2" %>
+</div>
