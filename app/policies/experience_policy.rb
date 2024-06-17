@@ -19,7 +19,8 @@ class ExperiencePolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    true
+    # record.user == user
   end
 
   def destroy?
@@ -33,4 +34,3 @@ class ExperiencePolicy < ApplicationPolicy
     end
   end
 end
-

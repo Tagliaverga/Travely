@@ -1,7 +1,7 @@
 <div class="container form">
   <%= simple_form_for [@trip, @itinerary] do |f| %>
   <%= f.input :description %>
-  <%= f.input :date %>
+  <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
   <%= f.button :submit, class:"btn-singup btn btn-ghost mt-2" %>
 <% end %>
 

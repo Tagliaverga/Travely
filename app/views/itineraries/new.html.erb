@@ -1,4 +1,4 @@
 <h1 class="d-flex justify-content-center my-2">Create a new itinerary</h1>
 <%= render 'form', itinerary: @itinerary %>
 
-<%= link_to "Back", user_trip_path(current_user, @trip), class: "btn btn-ghost roboto-regular my-3" %>
+<%= link_to "Back", trip_path(@trip), class: "btn btn-ghost roboto-regular my-3" %>

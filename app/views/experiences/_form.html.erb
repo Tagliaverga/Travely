@@ -1,8 +1,11 @@
 <%= simple_form_for [@itinerary, @experience] do |f| %>
   <%# <%= f.input :name %>
   <%= f.input :service_id, as: :select,
-              collection: [@service.profession] %>
+              collection: @services,
+              label_method: :profession  %>
   <%# <%= f.input :star_date %>
   <%# <%= f.input :end_date %>
-  <%= f.button :submit %>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, class: "btn-login btn btn-ghost" %>
+  </div>
 <% end %>
