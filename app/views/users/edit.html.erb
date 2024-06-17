@@ -1,6 +1,7 @@
-<h1 class="d-flex justify-content-center">Editando seu perfil</h1>
+<h1 class="d-flex justify-content-center bebas-neue-regular m-4">Editando seu perfil</h1>
 
-<%= simple_form_for [@user] do |f| %>
+<div class="container form">
+  <%= simple_form_for [@user] do |f| %>
   <%= f.input :first_name, label: "Name" %>
   <%= f.input :last_name, label: "Last name" %>
   <%= f.input :email %>
@@ -9,3 +10,4 @@
   <%= f.input :contractor, as: :select, collection: [['Yes', true], ['No', false]] %>
   <%= f.button :submit, class:"btn-login btn btn-ghost" %>
 <% end %>
+</div>
