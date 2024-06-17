@@ -1,11 +1,7 @@
 class DocumentsController < ApplicationController
-  before_action :set_itinerary, only: %i[show new index create]
+  before_action :set_itinerary, only: %i[show new create]
   def index
-    @document = policy_scope(Document)
-    @documents = Document.all
-    @itinerary = Itinerary.find(params[:itinerary_id])
-    authorize @document
-
+    @documents = policy_scope(Document)
   end
 
   def new

@@ -31,7 +31,7 @@ class DocumentPolicy < ApplicationPolicy
 
   class Scope < ApplicationPolicy::Scope
     def resolve
-      scope.where(user: user)
+      scope.where(itinerary: user.itineraries)
     end
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
