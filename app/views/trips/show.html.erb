@@ -20,14 +20,18 @@
 
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
-  <li>
+  <li class="d-flex justify-content-between">
+  <div class="my-1">
     <%= itinerary.description %> - <%= itinerary.date.year %> / <%= format('%02d', itinerary.date.month) %> / <%= format('%02d', itinerary.date.day) %> - Hour: <%= format('%02d', itinerary.date.hour) %> : <%= format('%02d', itinerary.date.min) %>
-    <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn btn-destroy ms-2 mb-2 roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  </div>
+  <div>
+    <%= link_to "Create  a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 btn-singup btn btn-ghost" %>
+    <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  </div>
   </li>
   <% end %>
 </ul>
 
-<%= link_to "Create  a new experience", new_itinerary_experience_path(@trip) %>
 
 
-<%= link_to "Back", user_trips_path(current_user, @trip), class: "btn-login btn btn-ghost roboto-regular" %>
+<%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>

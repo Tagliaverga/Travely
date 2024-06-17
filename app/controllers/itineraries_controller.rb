@@ -11,7 +11,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.trip = @trip
     if @itinerary.save
-      redirect_to user_trip_path(current_user, @trip), notice: "itinerario salvo"
+      redirect_to trip_path(@trip), notice: "itinerario salvo"
     else
       render :new, status: :unprocessable_entity
     end
