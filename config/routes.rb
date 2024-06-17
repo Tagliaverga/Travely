@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[show edit update]
-  
+
   resources :trips, except: %i[destroy]
 
   resources :trips, only: %i[destroy] do
