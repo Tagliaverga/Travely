@@ -1,0 +1,4 @@
+<h1><%= @document.description %></h1>
+
+<%= @document.price %>
+<%= cl_image_tag @document.photo.key if @document.photo.attached? %>

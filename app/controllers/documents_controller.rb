@@ -1,8 +1,7 @@
 class DocumentsController < ApplicationController
-  before_action :set_itinerary, only: %i[show new create]
+  before_action :set_itinerary, only: %i[index new create]
   def index
-    @documents = policy_scope(Document)
-    @document  = Document.where(params[:id])
+    @documents  = policy_scope(Document).where(itinerary: @itinerary)
   end
 
   def new
@@ -10,11 +9,16 @@ class DocumentsController < ApplicationController
     authorize @document
   end
 
+  def show
+    @document = Document.find(params[:id])
+    authorize @document
+  end
+
   def create
     @document = Document.new(document_params)
     @document.itinerary = @itinerary
     if @document.save
-      redirect_to documents_path, notice: "document created"
+      redirect_to @document, notice: "document created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,8 +27,9 @@ class DocumentsController < ApplicationController
 
   private
 
-  # def set_itinerary
-  # end
+  def set_itinerary
+    @itinerary = Itinerary.find(params[:itinerary_id])
+  end
 
   def document_params
     params.require(:document).permit(:description, :price, :photo, :itinerary_id)

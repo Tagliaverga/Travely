@@ -38,7 +38,10 @@
   <% @trip.itineraries.each do |itinerary| %>
     <li class="d-flex justify-content-between">
       <div class="my-1">
-        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>  <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn btn-destroy ms-2 mb-2 roboto-regular" %> <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>
+        <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn btn-destroy ms-2 mb-2 roboto-regular" %> <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%# <%= link_to "Add a document", new_itinerary_document_path(itinerary), class: "btn btn-ghost mb-2"%>
+        <%= link_to "Documents", itinerary_documents_path(itinerary), class: "btn btn-ghost mb-2"%>
 
           <% itinerary.experiences.each do |experience| %>
             <div class="experience">
