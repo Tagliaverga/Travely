@@ -56,9 +56,7 @@
 #     @trip = Trip.find(params[:id])
 #   end
 
-#   def set_itinerary
-#     @itinerary = Itinerary.find(params[:id])
-#   end
+
 # end
 
 
@@ -67,6 +65,7 @@ class TripsController < ApplicationController
 
   def show
     authorize @trip
+    @itinerary = Itinerary.find(params[:id])
     @itineraries = @trip.itineraries.includes(:experiences).order(date: :asc)
   end
 
@@ -89,5 +88,7 @@ class TripsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:id])
-  end 
+  end
+
+
 end
