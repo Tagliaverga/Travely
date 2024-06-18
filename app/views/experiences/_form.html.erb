@@ -1,10 +1,13 @@
 <%= simple_form_for [@itinerary, @experience] do |f| %>
-  <%# <%= f.input :name %>
   <%= f.input :service_id, as: :select,
               collection: @services,
-              label_method: :profession  %>
-  <%# <%= f.input :star_date %>
-  <%# <%= f.input :end_date %>
+              label_method: :profession,
+              value_method: :id,
+              prompt: "Select a service" %>
+  <%= f.input :user_id, as: :select,
+              collection: @users.map { |user| [user.full_name, user.id] },
+              label: "User providing the service",
+              prompt: "Select a user" %>
   <div class="d-flex justify-content-center">
     <%= f.button :submit, class: "btn-login btn btn-ghost" %>
   </div>

@@ -65,6 +65,22 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy]
 
+  def new
+    @trip = Trip.new
+    authorize @trip
+  end
+
+  def create
+    @trip = Trip.new(trip_params)
+    @trip.user = current_user
+    authorize @trip
+    if @trip.save
+      redirect_to trip_path(@trip), notice: "Trip was succefully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def show
     authorize @trip
     @itineraries = @trip.itineraries.includes(:experiences).order(date: :asc)
@@ -89,5 +105,5 @@ class TripsController < ApplicationController
 
   def set_trip
     @trip = Trip.find(params[:id])
-  end 
+  end
 end
