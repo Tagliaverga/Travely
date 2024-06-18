@@ -39,7 +39,7 @@ document.addEventListener("turbolinks:load", function() {
         // Populate with new options
         data.users.forEach(user => {
           const option = document.createElement('option');
-          option.value = user.id;
+          option.value = user.id.where;
           option.textContent = user.full_name;
           userSelect.appendChild(option);
         });
