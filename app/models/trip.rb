@@ -1,14 +1,20 @@
-class Trip < ApplicationRecord
-  include PgSearch::Model
-  pg_search_scope :global_search,
-                  against: [ :first_name, :last_name, :email ],
-                              using: {
-                                tsearch: { prefix: true }
-                              }
+# class Trip < ApplicationRecord
 
+#   belongs_to :user
+#   has_many :itineraries
+#   has_many :experiences, through: :itinerary
+#   validates :destination, :star_date, :end_date, presence: true
+#   has_one_attached :photo
+
+
+# end
+
+
+class Trip < ApplicationRecord
   belongs_to :user
-  has_many :itineraries
-  has_many :experiences, through: :itinerary
-  validates :destination, :star_date, :end_date, presence: true
+  has_many :itineraries, dependent: :destroy
+  has_many :experiences, through: :itineraries
   has_one_attached :photo
+
+  validates :destination, :star_date, :end_date, presence: true
 end

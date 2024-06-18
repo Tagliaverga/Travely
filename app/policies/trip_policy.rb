@@ -18,7 +18,7 @@ class TripPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    user.admin? || user == record.user
   end
 
   class Scope < ApplicationPolicy::Scope
