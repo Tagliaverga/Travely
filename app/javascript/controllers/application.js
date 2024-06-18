@@ -7,3 +7,7 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+// application.js
+import { Turbo } from "@hotwired/turbo-rails"
+
