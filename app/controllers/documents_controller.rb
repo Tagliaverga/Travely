@@ -23,9 +23,8 @@ class DocumentsController < ApplicationController
 
   private
 
-  def set_itinerary
-    @itinerary = Itinerary.find(params[:itinerary_id])
-  end
+  # def set_itinerary
+  # end
 
   def document_params
     params.require(:document).permit(:description, :price, :photo, :itinerary_id)
