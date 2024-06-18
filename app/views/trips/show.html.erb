@@ -16,7 +16,7 @@
     <% @trip.itineraries.each do |itinerary| %>
       <% if itinerary.date.to_date == date %>
         <div class="itinerary">
-          <strong><%= itinerary.description %></strong>
+          <%# <strong><%= itinerary.description </strong>%>
           <% itinerary.experiences.each do |experience| %>
             <div class="experience">
               <%= experience.service.profession %>
@@ -28,26 +28,25 @@
   </div>
 <% end %>
 
+
+
 <%# Arrumar os botões em cima do calendário, arrumar a new trip,  arrumar o delete de todos os itinerários. %>
 
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
-
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
     <li class="d-flex justify-content-between">
       <div class="my-1">
-        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>
-        <% itinerary.experiences.each do |experience| %>
-          <div class="experience">
-            <%= experience.service.profession %>
-          </div>
-        <% end %>
+        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>  <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn btn-destroy ms-2 mb-2 roboto-regular" %> <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
+          <% itinerary.experiences.each do |experience| %>
+            <div class="experience">
+              <%= experience.service.profession %>
+            </div>
+          <% end %>
       </div>
-      <div>
-        <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn-singup btn btn-ghost" %>
-        <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-      </div>
+
     </li>
   <% end %>
 </ul>
