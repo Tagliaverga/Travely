@@ -34,7 +34,6 @@
 
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
-
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
     <li class="d-flex justify-content-between">
@@ -47,8 +46,6 @@
             </div>
           <% end %>
       </div>
-
-      <%= @itinerary.content %>
 
     </li>
   <% end %>
