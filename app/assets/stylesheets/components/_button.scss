@@ -1,19 +1,24 @@
 .btn-login {
   color: #1abc9c;
+  font-style: bold;
 }
 
 .btn-login:hover {
   box-shadow: 5px 5px 10px;
   background-color: #1abc9c;
+  font-style: bold;
 }
 
 .btn-singup {
   color: #1abc9c;
+  font-style: bold;
 }
 
 .btn-singup:hover {
   box-shadow: 5px 5px 10px;
-  background-color: #205aa5;
+  background-color: #000;
+  color:#ffff;
+  font-style: bold;
 }
 
 .forgot-password {
@@ -30,6 +35,7 @@
 .btn-resend:hover {
     box-shadow: 5px 5px 10px;
     background-color: #1abc9c;
+    font-style: bold;
 }
 
 .btn-home {
@@ -41,4 +47,6 @@
   color: white;
   text-decoration: none;
   margin: auto 0;
+  font-style: bold;
+  box-shadow: 5px 5px 10px;
 }
