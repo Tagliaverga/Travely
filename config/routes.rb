@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   resources :profiles, only: %i[new create]
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[show edit update]
-  
+
   delete "trips/:trip_id/destroy", to: "trips#destroy", as: :trip_destroy
 
   resources :trips, except: %i[show destroy]
@@ -28,9 +27,7 @@ Rails.application.routes.draw do
 
   resources :documents, only: %i[destroy index]
 
-
   root to: "pages#home"
 
   get "up" => "rails/health#show", as: :rails_health_check
-
 end

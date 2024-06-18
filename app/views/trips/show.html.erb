@@ -1,42 +1,55 @@
-<h1>Trip to <strong><%= @trip.destination %></strong> </h1>
-<% if @trip.photo.key.present? %>
-  <%= cl_image_tag @trip.photo.key, height: 300, width: 400, crop: :fill %>
-<% else %>
-   <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", width: 400, height: 300, crop: :fill %>
-<% end %>
-
-
-<%= month_calendar(attribute: :star_date, end_attribute: :end_date) do |date| %>
-  <%= date %>
-<% end %>
-
-<%= month_calendar(events: @meetings) do |date, meetings| %>
-  <%= date %>
-
-  <% meetings.each do |meeting| %>
-    <div>
-      <%= meeting.name %>
-    </div>
+<div class="banner">
+  <% if @trip.photo.key.present? %>
+    <%= cl_image_tag @trip.photo.key, class: "banner-image", alt: "Banner Image" %>
+  <% else %>
+    <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", class: "banner-image", alt: "Placeholder Image" %>
   <% end %>
+  <div class="banner-content">
+    <h1 class="text-center">Trip to <strong><%= @trip.destination %></strong></h1>
+  </div>
+</div>
+
+
+<%= month_calendar(attribute: :date) do |date, events| %>
+  <div class="day">
+    <%= date.day %>
+    <% @trip.itineraries.each do |itinerary| %>
+      <% if itinerary.date.to_date == date %>
+        <div class="itinerary">
+          <strong><%= itinerary.description %></strong>
+          <% itinerary.experiences.each do |experience| %>
+            <div class="experience">
+              <%= experience.service.profession %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
+
+<%# Arrumar os botões em cima do calendário, arrumar a new trip,  arrumar o delete de todos os itinerários. %>
 
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
 
 <ul>
   <% @trip.itineraries.each do |itinerary| %>
-  <li class="d-flex justify-content-between">
-  <div class="my-1">
-    <%= itinerary.description %> - <%= itinerary.date.year %> / <%= format('%02d', itinerary.date.month) %> / <%= format('%02d', itinerary.date.day) %> - Hour: <%= format('%02d', itinerary.date.hour) %> : <%= format('%02d', itinerary.date.min) %>
-  </div>
-  <div>
-    <%= link_to "Create  a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn-singup btn btn-ghost" %>
-    <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-  </div>
-  </li>
+    <li class="d-flex justify-content-between">
+      <div class="my-1">
+        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>
+        <% itinerary.experiences.each do |experience| %>
+          <div class="experience">
+            <%= experience.service.profession %>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn-singup btn btn-ghost" %>
+        <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      </div>
+    </li>
   <% end %>
 </ul>
-
-
 
 <%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>
