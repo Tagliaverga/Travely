@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :trips, dependent: :destroy
   has_many :itineraries, through: :trips
-  has_many :services
-  has_many :itineraries, through: :trips
+  has_many :services, dependent: :destroy
+  has_many :experiences, through: :services
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -13,5 +13,8 @@ class User < ApplicationRecord
   # validates :contractor, presence: true
 
   # has_one_attached :photo
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 
 end
