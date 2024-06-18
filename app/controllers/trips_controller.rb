@@ -3,21 +3,7 @@
 #   before_action :set_itinerary, only: %i[edit update destroy]
 
 
-#   def new
-#     @trip = Trip.new
-#     authorize @trip
-#   end
 
-#   def create
-#     @trip = Trip.new(trip_params)
-#     @trip.user = current_user
-#     authorize @trip
-#     if @trip.save
-#       redirect_to trip_path(@trip), notice: "Trip was succefully created."
-#     else
-#       render :new, status: :unprocessable_entity
-#     end
-#   end
 
 #   def index
 #     @trips = policy_scope(Trip)
@@ -56,9 +42,7 @@
 #     @trip = Trip.find(params[:id])
 #   end
 
-#   def set_itinerary
-#     @itinerary = Itinerary.find(params[:id])
-#   end
+
 # end
 
 
