@@ -22,10 +22,10 @@ Rails.application.routes.draw do
   end
 
   resources :itineraries, only: %i[destroy] do
-    resources :documents, except: %i[destroy index]
+    resources :documents, only: %i[create new index]
   end
 
-  resources :documents, only: %i[destroy index]
+  resources :documents, only: %i[destroy show]
 
   root to: "pages#home"
 
