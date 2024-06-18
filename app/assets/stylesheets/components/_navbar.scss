@@ -1,18 +1,41 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: #1abc9c;
-
+  background-color: #0E9EEF; /* Cor de fundo da navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra da navbar */
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-lewagon .navbar-brand h1 {
+  font-size: 3rem; /* Tamanho do texto "Travely" */
+  font-weight: bold; /* Peso da fonte do texto "Travely" */
+  margin: 0; /* Remove margem */
+  color: #ffff
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .nav-link {
+  color: #ffff; /* Cor do link */
+  font-size: 1rem; /* Tamanho da fonte dos links */
+  font-weight: 500; /* Peso da fonte dos links */
 }
 
-.avatar-photo {
-  display: flex;
-  justify-content: end;
+.navbar-lewagon .nav-link:hover {
+  color: #007bff; /* Cor do link ao passar o mouse */
+}
+
+.navbar-toggler {
+  border-color: #ffff; /* Cor da borda do botão toggler */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.avatar-photo .avatar {
+  border-radius: 50%; /* Torna a imagem do avatar circular */
+  width: 40px; /* Largura da imagem do avatar */
+  height: 40px; /* Altura da imagem do avatar */
+}
+
+@media (max-width: 576px) {
+  .navbar-lewagon .navbar-brand h1 {
+    font-size: 1.2rem; /* Tamanho do texto "Travely" para telas menores */
+  }
 }
