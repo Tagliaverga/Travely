@@ -4,9 +4,9 @@
   padding: 10px 20px; /* Padding adicional para melhor espaçamento */
 
   .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
     h1 {
       font-size: 3rem; /* Tamanho do texto "Travely" */
       font-weight: bold; /* Peso da fonte do texto "Travely" */
@@ -19,7 +19,7 @@
     color: #ffff; /* Cor do link */
     font-size: 1rem; /* Tamanho da fonte dos links */
     font-weight: 500; /* Peso da fonte dos links */
-    margin-right: 10px; /* Margem direita dos links */
+    // margin-right: 10px; /* Margem direita dos links */
   }
 
   .nav-link:hover {
@@ -48,8 +48,13 @@
     justify-content: space-between;
 
     .nav-item:first-child {
-      margin-right: auto; /* Alinha o primeiro item (Home) à esquerda */
+      // margin-right: auto; /* Alinha o primeiro item (Home) à esquerda */
     }
+  }
+
+  .navbar-collapse {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr;
   }
 
   .ms-auto {
