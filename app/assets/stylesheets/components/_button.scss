@@ -50,3 +50,20 @@
   font-style: bold;
   box-shadow: 5px 5px 10px;
 }
+
+.btn-i {
+
+  width: 50%;
+  padding: 8px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-style: bold;
+}
+.btn-i:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+}
