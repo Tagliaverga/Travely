@@ -34,24 +34,34 @@
 
 <h2>Add a itinerary</h2>
 <%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
-<ul>
+<div class="">
   <% @trip.itineraries.each do |itinerary| %>
-    <li class="d-flex justify-content-between">
-      <div class="my-1">
-        <%= itinerary.description %> - <%= itinerary.date.strftime('%Y/%m/%d %H:%M') %>
-        <%= link_to "Create a new experience", new_itinerary_experience_path(itinerary), class:"mx-3 my-2 btn btn-destroy ms-2 mb-2 roboto-regular" %> <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-login btn btn-ghost roboto-regular", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-        <%# <%= link_to "Add a document", new_itinerary_document_path(itinerary), class: "btn btn-ghost mb-2"%>
-        <%= link_to "Documents", itinerary_documents_path(itinerary), class: "btn btn-ghost mb-2"%>
+    <div class="cardi p-4 my-3">
+      <div class="p-2">
+        <div>
+         <strong>Date:</strong> <%= itinerary.date.strftime('%Y/%m/%d') %>
+        </div>
+        <div class="p-2">
+          <strong>Itinerary:</strong> <%= itinerary.description %>
+        </div>
+        <div class="p-2">
+           <% itinerary.experiences.each do |experience| %>
+              <div class="experience">
+                <strong>Service: </strong> <%= experience.service.profession %>
+              </div>
+            <% end %>
+        </div>
+        <div class=" p-3">
+          <%= link_to "Add experience", new_itinerary_experience_path(itinerary), class:"btn-i roboto-regular mb-2" %>
+          <%# <%= link_to "Add a document", new_itinerary_document_path(itinerary), class: "btn btn-ghost mb-2"%>
+          <%= link_to "Documents", itinerary_documents_path(itinerary), class: "btn-i"%>
+          <%= link_to 'Delete', itinerary_path(itinerary, trip: @trip.id), class: "btn-i roboto-regular mt-2", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
 
-          <% itinerary.experiences.each do |experience| %>
-            <div class="experience">
-              <%= experience.service.profession %>
-            </div>
-          <% end %>
+        </div>
       </div>
 
-    </li>
+    </div>
   <% end %>
-</ul>
+</div class="cards-grid">
 
 <%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>
