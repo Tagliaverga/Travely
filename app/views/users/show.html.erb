@@ -8,7 +8,7 @@
       <% if @user.photo.key.present? %>
              <%= cl_image_tag @user.photo.key, height: 360, class: "img-card-index", crop: :fill %>
             <% else %>
-              <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill %>
+              <%= image_tag "pro_default.jpg", height: 360, class: "img-card-index", crop: :fill %>
             <% end %>
     </div>
 
