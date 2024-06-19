@@ -7,7 +7,7 @@
 class Itinerary < ApplicationRecord
   belongs_to :trip
   has_many :experiences, dependent: :destroy
-
+  has_many :documents, dependent: :destroy
   validates :description, :date, presence: true
 
   # def content()
