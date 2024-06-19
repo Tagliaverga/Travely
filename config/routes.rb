@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :trips, except: %i[show destroy]
 
-  resources :trips, only: %i[show destroy] do
+  get "trips/:id", to: "trips#show", as: :trip_show
+
+  resources :trips, only: %i[destroy] do
     resources :itineraries, only: %i[new create update edit]
   end
 
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :documents, only: %i[destroy show]
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[show] do
     resources :messages, only: :create
   end
 
