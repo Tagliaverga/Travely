@@ -5,7 +5,7 @@
     <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", class: "banner-image", alt: "Placeholder Image" %>
   <% end %>
   <div class="banner-content">
-    <h1 class="text-center">Trip to <strong><%= @trip.destination %></strong></h1>
+    <h1 class="text-center bebas-neue-regular">Trip to <strong><%= @trip.destination %></strong></h1>
   </div>
 </div>
 
@@ -32,8 +32,8 @@
 
 <%# Arrumar os botões em cima do calendário, arrumar a new trip,  arrumar o delete de todos os itinerários. %>
 
-<h2>Add a itinerary</h2>
-<%= link_to "add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
+<h2 class="text-center bebas-neue-regular mt-4">Your tinerary</h2>
+<%= link_to "Add a itinerary", new_trip_itinerary_path(@trip), class: "btn btn-destroy ms-2 mb-2 roboto-regular" %>
 <div class="">
   <% @trip.itineraries.each do |itinerary| %>
     <div class="cardi p-4 my-3">
