@@ -3,13 +3,13 @@
 
   <div class="row g-0 d-flex justify-content-between m-4 align-items-center">
 
-    <div class="col-md-4 d-flex justify-content-start">
+    <div class="col-md-4 d-flex justify-content-start ">
       <%# <%= image_tag "mateus.png", class: "perfil", width:200 %>
       <% if @user.photo.key.present? %>
-             <%= cl_image_tag @user.photo.key, height: 360, class: "img-card-index", crop: :fill %>
-            <% else %>
-              <%= image_tag "pro_default.jpg", height: 360, class: "img-card-index", crop: :fill %>
-            <% end %>
+             <%= cl_image_tag @user.photo.key, class: "perfil", width:200, crop: :fill %>
+              <% else %>
+                <%= image_tag "pro_default.jpg", class: "perfil", crop: :fill %>
+          <% end %>
     </div>
 
     <div class="col-md-6 roboto-regular">

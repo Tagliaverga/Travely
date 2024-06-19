@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    authorize @user
     @user.update(user_params)
     redirect_to @user
-    authorize @user
   end
 
   private
