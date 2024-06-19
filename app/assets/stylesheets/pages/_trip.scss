@@ -5,3 +5,20 @@
   border-style: initial;
   overflow: overlay;
 }
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px;
+
+}
+
+.calendar-title {
+  font-family: "roboto";
+  font-size: bold;
+}
+
+.calendar-heading a {
+  text-decoration: none;
+
+}
