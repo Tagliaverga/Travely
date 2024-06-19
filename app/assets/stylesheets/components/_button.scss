@@ -1,16 +1,16 @@
 .btn-login {
-  color: #1abc9c;
+  color: #0E9EEF;
   font-style: bold;
 }
 
 .btn-login:hover {
   box-shadow: 5px 5px 10px;
-  background-color: #1abc9c;
+  background-color: #0E9EEF;
   font-style: bold;
 }
 
 .btn-singup {
-  color: #1abc9c;
+  color: #0E9EEF;
   font-style: bold;
 }
 
@@ -34,7 +34,7 @@
 
 .btn-resend:hover {
     box-shadow: 5px 5px 10px;
-    background-color: #1abc9c;
+    background-color: #0E9EEF;
     font-style: bold;
 }
 
@@ -54,12 +54,13 @@
 .btn-i {
 
   width: 50%;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
   background-color: black;
   color: white;
   text-decoration: none;
   font-style: bold;
+  border-radius: 10px;
 }
 .btn-i:hover {
   background-color: rgb(255, 255, 255);

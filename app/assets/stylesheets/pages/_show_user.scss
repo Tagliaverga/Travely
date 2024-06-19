@@ -12,8 +12,8 @@ background-color: #ffff;
 }
 
 .btn-ghost {
-  color: #1ABC9C;
-  border: 1px solid #1ABC9C;
+  color:#0E9EEF;
+  border: 1px solid#0E9EEF;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -23,11 +23,15 @@ background-color: #ffff;
 
 .btn-ghost:hover {
   opacity: 1;
+  border-style: solid;
+  border-color: #ffffff;
+  color:#ffffff;
+  background-color: #0E9EEF;
 }
 
 .btn-destroy {
-  color: #1ABC9C;
-  border: 1px solid #1ABC9C;
+  color:#0E9EEF;
+  border: 1px solid#0E9EEF;
   padding: 4px 8px;
   border-radius: 50px;
   font-weight: lighter;
