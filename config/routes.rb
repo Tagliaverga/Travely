@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  require "sidekiq/web"
-  authenticate :user, ->(user) { user.admin? } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  # require "sidekiq/web"
+  # authenticate :user, ->(user) { user.admin? } do
+  #   mount Sidekiq::Web => '/sidekiq'
+  # end
 
   devise_for :users
 
@@ -15,11 +15,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show edit update]
 
-  delete "trips/:trip_id/destroy", to: "trips#destroy", as: :trip_destroy
-
   resources :trips, except: %i[show destroy]
 
-  resources :trips, only: %i[show] do
+  resources :trips, only: %i[show destroy] do
     resources :itineraries, only: %i[new create update edit]
   end
 
