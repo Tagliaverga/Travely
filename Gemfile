@@ -59,6 +59,9 @@ gem 'country_select'
 gem "pg_search"
 gem "simple_calendar"
 
+gem "sidekiq", "~> 7"
+gem "sidekiq-failures"
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
