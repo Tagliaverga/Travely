@@ -49,10 +49,18 @@
   margin: auto 0;
   font-style: bold;
   box-shadow: 5px 5px 10px;
+  border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn-home:hover{
+  background-color: rgb(255, 255, 255);
+  color: #0E9EEF;
+  border-style: solid;
+  border-color:#0E9EEF;
 }
 
 .btn-i {
-
   width: 50%;
   padding: 10px;
   text-align: center;
@@ -67,4 +75,28 @@
   color: rgb(0, 0, 0);
   border-style: solid;
   border-color: rgb(0, 0, 0);
+}
+
+.btn-card{
+  display: block;
+  width: 100%;
+  padding: 0px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  margin: auto 0;
+  font-style: bold;
+  box-shadow: 5px 5px 10px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  size-adjust: 50px;
+}
+
+.btn-card:hover {
+  background-color: rgb(255, 255, 255);
+  color: #0E9EEF;
+  border-style: solid;
+  border-color:#0E9EEF;
+  border-radius: 5px;
 }
