@@ -10,7 +10,8 @@
 </div>
 
 
-<%= month_calendar(attribute: :date) do |date, events| %>
+<div class="container mt-4">
+  <%= month_calendar(attribute: :date) do |date, events| %>
   <div class="day">
     <%= date.day %>
     <% @trip.itineraries.each do |itinerary| %>
@@ -65,3 +66,5 @@
 </div class="cards-grid">
 
 <%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>
+
+</div>

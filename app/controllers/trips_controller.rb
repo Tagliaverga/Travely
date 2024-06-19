@@ -66,6 +66,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    set_trip
     authorize @trip
     @itineraries = @trip.itineraries.includes(:experiences).order(date: :asc)
   end

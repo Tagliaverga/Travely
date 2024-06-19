@@ -6,7 +6,8 @@
   <%= f.input :last_name %>
   <%= f.input :city %>
   <%= f.input :country %>
-  <%# <%= f.input :service %> 
+  <%= f.input :photo, as: :file %>
+  <%# <%= f.input :service %>
   <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
 
 <% end %>
