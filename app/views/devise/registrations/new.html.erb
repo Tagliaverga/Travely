@@ -18,6 +18,7 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
+            <%= f.input :photo, as: :file %>
           </div>
           <%# <%= f.select :contractor, as: :boolean, contractor: 'postive', traveler: 'negative' %>
           <%# <%= f.input :contractor, as: :boolean, checked_value: 'true', unchecked_value: 'false' %>
