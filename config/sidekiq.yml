@@ -2,3 +2,4 @@
 :timeout: 60
 :verbose: true
 :queues:
+   - default
