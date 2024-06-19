@@ -11,39 +11,23 @@ export { application }
 // application.js
 import { Turbo } from "@hotwired/turbo-rails"
 
-document.addEventListener("turbolinks:load", function() {
-  const serviceSelect = document.getElementById('service-select');
-  const userSelect = document.getElementById('user-select');
 
-  if (serviceSelect) {
-    serviceSelect.addEventListener('change', function() {
-      const serviceId = serviceSelect.value;
+const shareButton = document.getElementById('share-button');
+const tripDetails = document.getElementById('trip-details').innerText;
 
-      // Make an AJAX request to fetch users based on the selected service
-      fetch(`/experiences/new?service_id=${serviceId}`, {
-        headers: {
-          'X-Requested-With': 'XMLHttpRequest'
+shareButton.addEventListener('click', async () => {
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'Detalhes da Viagem',
+                text: tripDetails,
+                url: window.location.href,
+            });
+            console.log('Compartilhado com sucesso!');
+        } catch (error) {
+            console.error('Erro ao compartilhar:', error);
         }
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Clear existing options
-        userSelect.innerHTML = '';
-
-        // Add the prompt option
-        const promptOption = document.createElement('option');
-        promptOption.value = '';
-        promptOption.textContent = 'Select a user';
-        userSelect.appendChild(promptOption);
-
-        // Populate with new options
-        data.users.forEach(user => {
-          const option = document.createElement('option');
-          option.value = user.id.where;
-          option.textContent = user.full_name;
-          userSelect.appendChild(option);
-        });
-      });
-    });
-  }
+    } else {
+        alert('Compartilhamento não suportado neste navegador.');
+    }
 });

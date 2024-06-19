@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartilhar Viagem</title>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
     <%= javascript_importmap_tags %>
@@ -20,18 +23,7 @@
   <body>
     <div class="d-flex flex-column" style="min-height: 100vh">
       <%= render "shared/navbar" %>
-      <% if @trips.present? %>
-        <% @trips.map do |trip| %>
-            <% unless current_page?(trip_path(trip)) %>
-              <div class="container flex-grow-1">
-                 <%= yield %>
-            </div>
-            <% end %>
-          <% end %>
-        <% else %>
-          <%= yield %>
-      <% end %>
-
+        <%= yield %>
       <%= render "shared/footer" %>
     </div>
     <%= render "shared/flashes" %>

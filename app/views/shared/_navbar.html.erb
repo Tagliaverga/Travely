@@ -35,7 +35,11 @@
           </li>
           <li class="nav-item avatar-photo">
             <%= link_to user_path(current_user.id) do %>
-              <%= image_tag "mateus.png", class: "avatar", alt: "dropdown menu" %>
+              <% if @user&.photo&.key.present? %>
+                <%= cl_image_tag @user&.photo&.key, class: "avatar", alt: "dropdown menu" %>
+              <% else %>
+                <%= image_tag "pro_default.jpg", class: "avatar", alt: "dropdown menu" %>
+              <% end %>
             <% end %>
           </li>
         <% else %>
