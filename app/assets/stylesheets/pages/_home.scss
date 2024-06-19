@@ -16,52 +16,61 @@ header img {
 }
 
 .content {
-  padding: 20px;
+  padding: 0px;
+  margin-top: 30px;
+  height: fluid;
 }
 
 .section {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section img {
   width: 100%;
   height: auto;
+  border-right: #0000;
 }
 
 .section h2 {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .section p {
   font-size: 1em;
   line-height: 1.5;
+  text-align: justify;
+  align-content: center;
+  margin-top: 20px;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: auto;
 }
 
 .column {
-  flex: 50%;
+  flex: 30%;
   padding: 10px;
 }
 
 .new-trip {
   background-color: white;
+  font-style: bold;
   color: black;
   padding: 20px;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .new-trip img {
   width: 100%;
   height: auto;
+  size-adjust: 40px;
 }
 
 @media (max-width: 600px) {

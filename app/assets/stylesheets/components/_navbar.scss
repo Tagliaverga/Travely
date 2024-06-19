@@ -1,7 +1,7 @@
 .navbar-lewagon {
   background-color: #0E9EEF; /* Cor de fundo da navbar */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra da navbar */
-  padding: 10px 20px; /* Padding adicional para melhor espaçamento */
+  padding: 10px 10px; /* Padding adicional para melhor espaçamento */
 
   .navbar-brand {
     // position: absolute;
@@ -64,7 +64,7 @@
     align-items: center;
 
     .nav-item {
-      margin-left: 10px; /* Espaçamento entre os itens */
+      margin-left: 0px; /* Espaçamento entre os itens */
     }
 
     .nav-item:first-child {
