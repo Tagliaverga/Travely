@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # validates :contractor, presence: true
 
   after_commit :async_update, on: [:create, :update]
-  # has_one_attached :photo
+  has_one_attached :photo
 
   def full_name
     "#{first_name} #{last_name}"
