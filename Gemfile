@@ -62,7 +62,7 @@ gem "simple_calendar"
 gem "sidekiq", "~> 7"
 gem "sidekiq-failures"
 
-# gem 'redis'
+gem 'redis'
 
 group :development, :test do
   gem "dotenv-rails"
