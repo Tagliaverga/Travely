@@ -74,6 +74,7 @@ class TripsController < ApplicationController
 
   def index
     @trips = policy_scope(Trip)
+    @trips = Trip.all
   end
 
   def destroy

@@ -5,6 +5,7 @@
   border-style: initial;
   overflow: overlay;
 }
+
 .trip-card {
   background-color: #ffff;
   border-radius: 8px;
@@ -20,4 +21,9 @@ border-radius: 8px 8px 0 0;
 .bord {
   border: 5px solid #3498db;
   border-radius: 20px;
+}
+
+.calendar-title {
+  font-size: xx-large;
+  font-family: "roboto";
 }
