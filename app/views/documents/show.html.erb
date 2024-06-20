@@ -1,14 +1,8 @@
-<div class="container">
-  <h1 class="d-flex justify-content-center m-3 bebas-neue-regular"><%= @document.description %></h1>
-
-  <div class="d-flex justify-content-center m-3">
-    <%= cl_image_tag @document.photo.key, class: "doc  rouded" if @document.photo.attached? %>
-  </div>
-
-  <div class="d-flex justify-content-center m-3 roboto-regular">
-    <% if @document.price.present? %>
-      <strong> Price:</strong> <%= @document.price  %>
-    <% end %>
-  </div>
-
+<div class="container mt-5">
+    <div class="card trip-card">
+      <%= cl_image_tag @document.photo.key, class: "doc " if @document.photo.attached? %>
+      <div class="card-body">
+        <h1 class="d-flex justify-content-center m-3 bebas-neue-regular"><%= @document.description %></h1>
+      </div>
+    </div>
 </div>
