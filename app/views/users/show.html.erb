@@ -5,10 +5,10 @@
 
     <div class="col-md-4 d-flex justify-content-start ">
       <%# <%= image_tag "mateus.png", class: "perfil", width:200 %>
-      <% if @user.photo.key.present? %>
-             <%= cl_image_tag @user.photo.key, class: "perfil", width:200, crop: :fill %>
+      <% if  @user && @user.photo.key.present? %>
+             <%= cl_image_tag @user.photo.key, class: "perfil", width:200, height: 200, crop: :fill %>
               <% else %>
-                <%= image_tag "pro_default.jpg", class: "perfil", crop: :fill %>
+                <%= image_tag "pro_default.jpg", class: "perfil", width:200, height: 200, crop: :fill %>
           <% end %>
     </div>
 
