@@ -20,18 +20,7 @@
   <body>
     <div class="d-flex flex-column" style="min-height: 100vh">
       <%= render "shared/navbar" %>
-      <% if @trips.present? %>
-        <% @trips.map do |trip| %>
-            <% unless current_page?(trip_path(trip)) %>
-              <div class="container flex-grow-1">
-                 <%= yield %>
-            </div>
-            <% end %>
-          <% end %>
-        <% else %>
-          <%= yield %>
-      <% end %>
-
+        <%= yield %>
       <%= render "shared/footer" %>
     </div>
     <%= render "shared/flashes" %>

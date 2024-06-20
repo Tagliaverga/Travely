@@ -1,31 +1,33 @@
-<h1 class="d-flex justify-content-center m-4 bebas-neue-regular">Trips</h1>
+<h1 class="d-flex justify-content-center mt-4 bebas-neue-regular">Trips</h1>
 
-<div class="container d-flex align-items-center justify-content-between m-4">
-  <div class="cards-grid">
-    <% if @trips.present? %>
-      <% @trips.each do |trip| %>
-        <div class="cardb p-4">
-          <div class="mb-4">
-            <p><strong>Destination:</strong> <%= trip.destination %></p>
-            <p><strong>Start: </strong> <%= trip.star_date.strftime('%Y/%m/%d') %></p>
-            <p><strong>End: </strong> <%= trip.end_date.strftime('%Y/%m/%d') %></p>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-center m-4">
+    <div class="cards-grid">
+      <% if @trips.present? %>
+        <% @trips.each do |trip| %>
+          <div class="cardb p-4">
+            <div class="mb-4">
+              <p><strong>Destination:</strong> <%= trip.destination %></p>
+              <p><strong>Start: </strong> <%= trip.star_date.strftime('%Y/%m/%d') %></p>
+              <p><strong>End: </strong> <%= trip.end_date.strftime('%Y/%m/%d') %></p>
+            </div>
+
+            <div class="mb-2">
+              <% if trip.photo.key.present? %>
+                <%= cl_image_tag trip.photo.key, height: 360, class: "img-card-index", crop: :fill %>
+              <% else %>
+                <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill %>
+              <% end %>
+            </div>
+
+            <%= link_to "View", trip_path(trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
+            <%= link_to "Delete", trip_path(trip), method: :delete, class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2", data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
           </div>
-
-          <div class="mb-2">
-            <% if trip.photo.key.present? %>
-              <%= cl_image_tag trip.photo.key, height: 360, class: "img-card-index", crop: :fill %>
-            <% else %>
-              <%= image_tag "default.png", height: 360, class: "img-card-index", crop: :fill %>
-            <% end %>
-          </div>
-
-          <%= link_to "View", trip_path(trip), class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2" %>
-          <%= link_to "Delete", trip_path(trip), method: :delete, class: "d-grid gap-2 m-2 roboto-bold btn btn-ghost mb-2", data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
-        </div>
+        <% end %>
+      <% else %>
+        <p>No trips available.</p>
       <% end %>
-    <% else %>
-      <p>No trips available.</p>
-    <% end %>
+  </div>
   </div>
 </div>
 
