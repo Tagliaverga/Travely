@@ -29,8 +29,6 @@
   </div>
 <% end %>
 
-new_chatroom
-
 <%# Arrumar os botões em cima do calendário, arrumar a new trip,  arrumar o delete de todos os itinerários. %>
 
 <h2 class="text-center bebas-neue-regular mt-4">Your tinerary</h2>
@@ -63,16 +61,20 @@ new_chatroom
 
     </div>
   <% end %>
-</div class="cards-grid">
-  <div class="d-flex justify-content-center mt-4">
+
+</div class="d-flex justify-content-center">
+  <div class="cardi p-4 my-3  mx-auto w-50">
     <div>
-      <h4>Detalhes da Viagem</h4>
-      <p id="trip-details">Destino: <%= @trip.destination  %> <br>Data: <%= @trip.star_date.to_date  %> à <%= @trip.end_date.to_date  %><br>Descrição: Viagem romântica a Paris.</p>
-    </div>
-    <div >
-      <button class="btn btn-ghost btn-singup"id="share-button">Compartilhar Viagem</button>
-      <%# <%= link_to "Chat with Travelers", chatroom_path, class:"btn btn-ghost btn-singup" %>
-      <%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>
+      <div>
+        <h4 class="d-flex justify-content-center">Travel Details</h4>
+        <p id="trip-details"><strong>Destino: </strong> <%= @trip.destination  %> <br><strong>Data: </strong><%= @trip.star_date.to_date  %> à <%= @trip.end_date.to_date  %><br><strong>Descrição:</strong> Amazing trip to <%= @trip.destination %></p>
+      </div>
+
+      <div >
+        <button class="mx-4 btn btn-ghost btn-singup roboto-regular"id="share-button">Share your Trip</button>
+        <%# <%= link_to "Chat with Travelers", chatroom_path, class:"btn btn-ghost btn-singup" %>
+        <%= link_to "Back", trips_path, class: "btn-login btn btn-ghost roboto-regular" %>
+      </div>
     </div>
   </div>
 </div>

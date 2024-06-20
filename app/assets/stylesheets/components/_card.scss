@@ -20,9 +20,28 @@
 }
 .cardb:hover {
     transform: scale(1.05); /* Zoom */
-    box-shadow: 10PX 10px 5px rgba(0, 0, 0, 0.6); /* Aumento do brilho */
+    box-shadow: 10PX 10px 5px rgba(0, 0, 0, 0.6); 
     filter: brightness(110%);
   }
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover .cardb,
+.card-link:focus .cardb {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link .cardb p,
+.card-link .cardb .mb-4,
+.card-link .cardb .mb-2 {
+  text-decoration: none;
+  color: inherit;
+}
+
   .card-hover-effect {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }

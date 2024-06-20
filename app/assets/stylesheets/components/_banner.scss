@@ -7,6 +7,7 @@
 }
 
 .banner-image {
+  filter: blur(4px);
   width: 100rem;
   height: 40rem;
   object-fit: cover; /* Garante que a imagem cubra todo o espaço do banner */
