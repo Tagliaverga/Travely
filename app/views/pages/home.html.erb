@@ -43,6 +43,7 @@
     </button>
   </div>
 </div>
+<div class="container">
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +59,10 @@
             <div class="row">
                 <div class="column">
                     <div class="card">
-                        <a href="#" class="btn-card">
+                        <%# <a href="#" class="btn-card"> %>
+                            <%= link_to "NEW TRIP", new_trip_path, class: "btn-card" %>
                             <%= image_tag "mundo.jpeg", height: 200, class: "img-card-index", crop: :fill, alt: "mundo" %>
-                            <span>NEW TRIP</span>
+                            <%# <span>NEW TRIP</span> %>
                         </a>
                     </div>
                 </div>
@@ -83,7 +85,8 @@
                     <p>The history of Thailand is marked by ancient dynasties, powerful kingdoms, and diverse cultural influences, including Buddhism, which plays a central role in daily life.</p>
                 </div>
             </div>
-            <a href="#" class="btn-home roboto-regular">CLICK TO CREATE YOUR NEW TRIP</a>
+            <%# <a href="#" class="btn-home roboto-regular">CLICK TO CREATE YOUR NEW TRIP</a> %>
+            <%= link_to "CLICK TO CREATE YOUR NEW TRIP", new_trip_path, class: "btn-home roboto-regular" %>
         </div>
         <div class="section">
             <h2>The Passion for Harry Potter and the Castles of Scotland</h2>
@@ -99,3 +102,5 @@
     </div>
 </body>
 </html>
+
+</div>
