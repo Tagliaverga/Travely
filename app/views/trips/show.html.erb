@@ -1,13 +1,13 @@
 <div class="banner mt-2">
-  <% if @trip.photo.key.present? %>
-    <%= cl_image_tag @trip.photo.key, class: "banner-image", alt: "Banner Image" %>
-  <% else %>
-    <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", class: "banner-image", alt: "Placeholder Image" %>
-  <% end %>
-  <div class="banner-content">
-    <h1 class="text-center bebas-neue-regular">Trip to <strong><%= @trip.destination %></strong></h1>
+    <% if @trip.photo.key.present? %>
+      <%= cl_image_tag @trip.photo.key, class: "banner-image", alt: "Banner Image" %>
+    <% else %>
+      <%= image_tag "https://res-console.cloudinary.com/dzwg49aqs/thumbnails/v1/image/upload/v1718379827/ZGVmYXVsdC9kZWZhdWx0/drilldown", class: "banner-image", alt: "Placeholder Image" %>
+    <% end %>
+    <div class="banner-content">
+      <h1 class="text-center bebas-neue-regular">Trip to <strong><%= @trip.destination %></strong></h1>
   </div>
-<%# </div> %>
+</div>
 
 
 <div class="container mt-2">
