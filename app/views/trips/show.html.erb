@@ -1,4 +1,4 @@
-<%# <div class="container flex-grow-1"> %>
+<div class="banner mt-2">
   <% if @trip.photo.key.present? %>
     <%= cl_image_tag @trip.photo.key, class: "banner-image", alt: "Banner Image" %>
   <% else %>

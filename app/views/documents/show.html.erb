@@ -1,4 +1,7 @@
-<h1><%= @document.description %></h1>
-
-<%= @document.price %>
-<%= cl_image_tag @document.photo.key if @document.photo.attached? %>
+<div class="container">
+  <h1 class="d-flex justify-content-center m-3 roboto-regular"><%= @document.description %></h1>
+  <div class="d-flex justify-content-center m-3">
+    <%= @document.price  %>
+    <%= cl_image_tag @document.photo.key, class: "doc" if @document.photo.attached? %>
+  </div>
+</div>

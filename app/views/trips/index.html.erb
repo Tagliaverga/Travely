@@ -1,5 +1,6 @@
-<h1 class="d-flex justify-content-center m-4 bebas-neue-regular">Trips</h1>
-<div clas="container">
+<h1 class="d-flex justify-content-center mt-4 bebas-neue-regular">Trips</h1>
+
+<div class="container">
   <div class="d-flex align-items-center justify-content-center m-4">
     <div class="cards-grid">
       <% if @trips.present? %>
@@ -26,11 +27,6 @@
       <% else %>
         <p>No trips available.</p>
       <% end %>
-    </div>
   </div>
-
-  <div class="d-flex justify-content-center">
-    <%= link_to "New trip", new_trip_path, class: "btn-singup btn btn-ghost roboto-regular mx-2" if policy(Trip).new? %>
-    <%= link_to "Back", user_path(current_user), class: "btn-login btn btn-ghost roboto-regular mx-2" %>
   </div>
 </div>
