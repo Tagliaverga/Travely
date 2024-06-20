@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-$redis = Redis.new(url: 'redis://localhost:6379')
->>>>>>> master
 url = ENV["REDIS_URL"]
 
 if url
