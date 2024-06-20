@@ -1,13 +1,15 @@
-<h4 class="my-4">Just some more information...</h4>
+<div class="container">
+  <h4 class="my-4">Just some more information...</h4>
 
-<%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
+  <%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
 
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :city %>
-  <%= f.input :country %>
-  <%= f.input :photo, as: :file %>
-  <%# <%= f.input :service %>
-  <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :photo, as: :file %>
+    <%# <%= f.input :service %>
+    <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
 
-<% end %>
+  <% end %>
+</div>

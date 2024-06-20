@@ -49,6 +49,7 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy]
 
+
   def new
     @trip = Trip.new
     authorize @trip
@@ -91,4 +92,5 @@ class TripsController < ApplicationController
   def set_trip
     @trip = Trip.find(params[:id])
   end
+
 end
